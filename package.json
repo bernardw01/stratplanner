@@ -1,0 +1,32 @@
+{
+  "name": "stratplanner",
+  "version": "1.0.0",
+  "description": "People planning application for the rest of us.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardw01/stratplanner.git"
+  },
+  "keywords": [
+    "People",
+    "planing",
+    "strategy"
+  ],
+  "author": "Bernard L Williams PhD, PMP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernardw01/stratplanner/issues"
+  },
+  "homepage": "https://github.com/bernardw01/stratplanner#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.18.1",
+    "mongojs": "^2.4.1",
+    "path": "^0.12.7"
+  }
+}
