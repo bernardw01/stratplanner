@@ -1,0 +1,319 @@
+/* 
+Bernard Williams, Tina Nguyen, and Melissa Renaut
+UCF Bootcamp Aug2017 Week 17
+A Better Me
+*/
+
+*{
+
+box-sizing: border-box;
+	
+}
+
+body {
+	background-image: url("../images/background3.JPG");
+	background-size: cover;
+
+}
+
+
+#bigNavBar {
+	background-color: #2a3273;
+	max-height: 50%;
+/*
+
+padding-top: 5px;
+	padding-bottom: 5px;
+*/
+}
+
+#navbarTitle {
+
+/*
+	max-width: 300px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+*/
+	margin-top: 5px;
+	margin-bottom: 5px;
+/*	max-height: 70px;*/
+	min-width: 160px;
+	max-width: 90%;
+
+/*	min-height: 50px;*/
+/*	height: 70%;*/
+
+}
+
+
+
+
+ 
+#menuOptionsDiv { 
+float: right;
+	
+/*
+	margin-top: 10px;
+	margin-bottom: 10x;
+		max-height: 70px;
+	min-width: 160px;
+	max-width: 50%;
+*/
+
+}
+
+#questionMark {
+	font-size: 150%;
+	font-family: snap ITC;
+}
+
+#mainPage {
+	padding: 20px;
+}
+
+
+
+/*title styles*/
+
+h1 {
+	color: white;
+	/*may cause issues in repsonsive design*/
+	font-size: 320%;
+	font-family: snap ITC;
+	text-align: center;
+	margin-bottom: 20px;
+	
+
+}
+
+h2 {
+	color: #06a4e3;
+	font-family: Arial Rounded MT;
+	text-align: center;
+	/*may cause issues in repsonsive design*/
+	font-size: 150%;
+	padding-top: 10px;
+	
+}
+
+h3 {
+	color: #06a4e3;
+	font-family: snap ITC;
+	font-size: 200%;
+	font-weight: bold;
+	text-align: center;
+}
+
+h4{
+	color: #2a3273;
+	font-size: 250%;
+}
+
+h5{
+	color: #2a3273;
+	font-size: 100%;
+}
+
+#buttonsDiv{
+	text-align: center;
+}
+
+
+.btn-circle {
+	border-radius: 50%;
+	color: #2a3273;
+	font-family: snap ITC;
+	padding: 2px;
+	width: 90px;
+	height: 90px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+#instructionsButton {
+	background-color: white;
+	font-size: 65%;
+	margin-right: 5%;
+	-webkit-box-shadow: 0px 0px 85px 2px rgba(245,241,115,1);
+	-moz-box-shadow: 0px 0px 85px 2px rgba(245,241,115,1);
+	box-shadow: 0px 0px 85px 2px rgba(245,241,115,1);
+	text-align: center;
+		
+}
+
+
+
+#goalsButton {
+	background-color: white;
+	font-size: 65%;
+	-webkit-box-shadow: 0px 0px 85px 2px rgba(245,241,115,1);
+	-moz-box-shadow: 0px 0px 85px 2px rgba(245,241,115,1);
+	box-shadow: 0px 0px 85px 2px rgba(245,241,115,1);
+	text-align: center;
+
+}
+
+
+#quotePanel {
+	background-color: white;
+	margin: auto;
+	max-width: 500px;
+	padding: 5px;
+	text-align: center border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 5px solid #2a3273;
+	-webkit-box-shadow: 0px 0px 85px 2px rgba(250,250,247,1);
+	-moz-box-shadow: 0px 0px 85px 2px rgba(250,250,247,1);
+	box-shadow: 0px 0px 85px 2px rgba(250,250,247,1);
+}
+
+#quote {
+	padding: 2px;
+}
+
+p {
+	color: #868bb0;
+	font-size: 100%;
+}
+
+
+
+#todaysGoalsPanel {
+	background-color: white;	
+	padding: 5px;
+	margin: auto;
+	margin-top: 20px;
+	max-width: 500px;
+	text-align: center border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 5px solid #2a3273;
+}
+
+.panel-heading {
+	padding: 5px 15px;
+
+}
+
+#task {
+	
+	border-radius: 0px 3px 3px 3px;
+	-moz-border-radius: 0px 3px 3px 3px;
+	-webkit-border-radius: 0px 3px 3px 3px;
+	border: 2px solid #afa6f5;
+	}
+
+
+#completedButton {
+	background-color: #2fe782; !important;
+}
+
+
+#goalsButtonsDiv {
+	margin-top: 10px;
+	text-align: center;
+		
+}
+
+#homeButton {
+	margin-right: 40px;
+	
+}
+
+#editGoalsButton {
+	
+}
+
+
+/*in instructions module2*/
+#starImage {
+	max-height: 150px;
+	margin: auto;
+}
+
+
+#scoreboardPanel {
+	background-color: #2a3273;
+}
+
+
+#scoreboardHeading {
+	color: white;
+	background-color: #2a3273;
+	font-family: snap ITC;
+	text-align: center;
+	
+	
+}
+
+
+h6 {
+	color: white;
+	background-color: #2a3273;
+	padding: 2px;
+	
+	font-family: snap ITC;
+	font-size: 150%;
+}
+
+#smallStarImage {
+	display: inline-block;
+	
+	max-height: 30px;
+	
+}
+
+#supernovaImage {
+	display: inline-block;
+	max-height: 28px;
+
+}
+
+#neutronStarImage {
+	display: inline-block;
+	max-height: 30px;
+}
+
+/*all three score buttons*/
+#goldStarBadge, #neutronStarBadge, #supernovaBadge {
+	background-color: #070524;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+}
+
+/*
+.btn-default {
+	background-color: #06a4e3;
+}*/
+
+button {
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+button:hover {
+	color: black ;
+	background-color: #def ;
+}
+button:hover {
+	color: black ;
+	background-color: #def ;
+}
+
+#navbarProfilePic{
+    height: 50px;
+    width: auto;
+}
+/*for profile pic
+#navbarProfilePic{
+	margin-right: 5px;
+	float: left;
+	background: url(example.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
+/*	background-size: auto 100%; /* Interchange this value depending on prefering width vs. height */
+/*	width: 20px;
+/*	height: 20px;
+}
+*/

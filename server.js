@@ -4,7 +4,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
-var db = require("./models");
 var path = require("path");
 var app = express();
 var port = normalizePort(process.env.PORT || '3020');
