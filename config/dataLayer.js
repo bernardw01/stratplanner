@@ -96,5 +96,4 @@ let DataLayer = function () {
         });
     };
 };
-
 module.exports = DataLayer;

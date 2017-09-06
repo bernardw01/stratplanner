@@ -1,6 +1,5 @@
 let DataLayer = require("../config/datalayer")
 
-
 let dl = new DataLayer();
 module.exports = function () {
     "use strict";
