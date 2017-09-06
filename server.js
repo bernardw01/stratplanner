@@ -29,7 +29,8 @@ app.use("/", index_route);
 var team_route = require("./routes/cnt_team.js");
 app.use("/api/team", team_route);
 
-
+var user_route = require("./routes/cnt_user.js");
+app.use("/api/user", user_route);
 
 app.listen(port,
     function () {
