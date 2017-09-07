@@ -1,4 +1,4 @@
-var DataLayer = require("../config/datalayer")
+var DataLayer = require("../config/dataLayer")
 
 let dl = new DataLayer();
 module.exports = function () {
