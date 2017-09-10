@@ -77,10 +77,13 @@ let DataLayer = function () {
         document.lastUpdated = lastUpdated;
 
         mongo.connect(connectInfo.getConnectString(), function (err, db) {
-            console.log("===== " + collectionName + ".insert =====");
+            console.log("===== " + collectionName + ".update =====");
             assert.equal(null, err);
             let id = new ObjectID(key);
             let filter = {_id: id};
+            console.log("Query ID:",id);
+            console.log("Query Filter:",filter);
+            console.log("Collection Name:", collectionName);
             db.collection(collectionName).updateOne(filter, {$set: document}, function (err, data) {
                 // Log any errors if the server encounters one
                 if (err) {
@@ -93,6 +96,49 @@ let DataLayer = function () {
                 }
             });
 
+        });
+    };
+    this.addKeyToArray = function (collectionName, key, fieldName, subKey, callback) {
+
+        var newDate = moment(Date.now());
+        var lastUpdated = {
+            unixTimeStamp: Date.now(),
+            formattedDate: newDate.format('MM/DD/YYYY HH:mm')
+        };
+
+        //document.lastUpdated = lastUpdated;
+
+        mongo.connect(connectInfo.getConnectString(), function (err, db) {
+            console.log("===== " + collectionName + ".AddsubKey to " + fieldName + " ===== ");
+            assert.equal(null, err);
+
+            let id = new ObjectID(key);
+            console.log(id);
+            let filter = {_id: id};
+            //Check the name of the field that we are wanting to push an element into
+            console.log("Team ID:",id);
+            console.log("Query Filter:",filter);
+            console.log("Collection Name:", collectionName);
+
+            if (fieldName === "reviews"){
+                var pushObj = { "reviews": subKey};
+                console.log("Adding a Review");
+            }
+            if (fieldName === "teamMembers"){
+                var pushObj = { "teamMembers": subKey};
+                console.log("Adding a Team Member");
+            }
+            db.collection(collectionName).updateOne(filter, {$push: pushObj}, function (err, data) {
+                // Log any errors if the server encounters one
+                if (err) {
+                    console.log(err);
+                    callback(err);
+                }
+                else {
+                    //console.log(data);
+                    callback(data);
+                }
+            });
         });
     };
 };

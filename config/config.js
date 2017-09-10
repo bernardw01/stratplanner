@@ -7,7 +7,7 @@ module.exports = {
             console.log("Server running in production environment");
             return MONGODB_URI;
         } else {
-            console.log("Connected correctly to local server");
+            console.log("Server running on the localhost");
             return "mongodb://localhost/stratplanner";
         }
     }
