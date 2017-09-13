@@ -4,8 +4,8 @@ let dl = new DataLayer();
 module.exports = function () {
     "use strict";
     this.findAll = function (callback) {
-        console.log("===== team.findall =====");
-        dl.findAll("teams", function (err, data) {
+        console.log("===== review.findall =====");
+        dl.findAll("reviews", function (err, data) {
             // Log any errors if the server encounters one
             if (err) {
                 console.log(err);
@@ -17,10 +17,11 @@ module.exports = function () {
             }
         });
     };
-    this.addNew = function (newTeam, callback) {
 
-        console.log("===== team.addNew =====");
-        dl.insert("teams", [newTeam], function (err, data) {
+    this.addNew = function (newReview, callback) {
+
+        console.log("===== review.addNew =====");
+        dl.insert("reviews", [newReview], function (err, data) {
             // Log any errors if the server encounters one
             if (err) {
                 console.log(err);
@@ -33,10 +34,11 @@ module.exports = function () {
             }
         });
     };
+
     this.delete = function (key, callback) {
-        console.log("===== team.delete =====");
+        console.log("===== review.delete =====");
         console.log("Key:", key);
-        dl.deleteOne("teams", key, function (err, data) {
+        dl.deleteOne("reviews", key, function (err, data) {
             // Log any errors if the server encounters one
             if (err) {
                 console.log(err);
@@ -48,11 +50,11 @@ module.exports = function () {
             }
         });
     };
-    this.update = function (key, newTeam, callback) {
+    this.update = function (key, newReview, callback) {
 
-        console.log("===== team.update =====");
+        console.log("===== review.update =====");
 
-        dl.update('teams', key, newTeam, function (err, data) {
+        dl.update('reviews', key, newReview, function (err, data) {
             // Log any errors if the server encounters one
             if (err) {
                 console.log(err);
@@ -65,24 +67,5 @@ module.exports = function () {
             }
         });
     };
-    this.addUser = function (key, userKey, callback) {
-        console.log("===== team-user.update =====");
-        console.log("TeamID:", key);
-        console.log("TeamID:", userKey);
-
-        dl.addKeyToArray('teams', key, 'teamMembers', userKey, function (err, data) {
-            // Log any errors if the server encounters one
-            if (err) {
-                console.log(err);
-                callback(err);
-            }
-            // Otherwise, send the result of this query to the caller
-            else {
-                console.log(data);
-                callback(data);
-            }
-        });
-    };
-
 };
 

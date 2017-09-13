@@ -81,8 +81,8 @@ let DataLayer = function () {
             assert.equal(null, err);
             let id = new ObjectID(key);
             let filter = {_id: id};
-            console.log("Query ID:",id);
-            console.log("Query Filter:",filter);
+            console.log("Query ID:", id);
+            console.log("Query Filter:", filter);
             console.log("Collection Name:", collectionName);
             db.collection(collectionName).updateOne(filter, {$set: document}, function (err, data) {
                 // Log any errors if the server encounters one
@@ -116,16 +116,16 @@ let DataLayer = function () {
             console.log(id);
             let filter = {_id: id};
             //Check the name of the field that we are wanting to push an element into
-            console.log("Team ID:",id);
-            console.log("Query Filter:",filter);
+            console.log("Team ID:", id);
+            console.log("Query Filter:", filter);
             console.log("Collection Name:", collectionName);
 
-            if (fieldName === "reviews"){
-                var pushObj = { "reviews": subKey};
+            if (fieldName === "reviews") {
+                var pushObj = {"reviews": subKey};
                 console.log("Adding a Review");
             }
-            if (fieldName === "teamMembers"){
-                var pushObj = { "teamMembers": subKey};
+            if (fieldName === "teamMembers") {
+                var pushObj = {"teamMembers": subKey};
                 console.log("Adding a Team Member");
             }
             db.collection(collectionName).updateOne(filter, {$push: pushObj}, function (err, data) {
@@ -141,6 +141,41 @@ let DataLayer = function () {
             });
         });
     };
+    this.findOne = function (collectionName, fieldName, fieldValue, callback) {
+        mongo.connect(connectInfo.getConnectString(), function (err, db) {
+            console.log("===== " + collectionName + ".FindOne Based on " + fieldName + " ===== ");
+            assert.equal(null, err);
+
+            //select the right filter
+            let filter = {};
+            if (fieldName === "reviews") {
+                filter = {"reviews": fieldValue};
+                console.log("Adding a Review");
+            }
+            if (fieldName === "teamMembers") {
+                filter = {"teamMembers": fieldValue};
+                console.log("Adding a Team Member");
+            }
+            if (fieldName === "user_email") {
+                filter = {"user_email": fieldValue};
+            }
+
+            //Check the name of the field that we are wanting to push an element into
+            console.log("Query Filter:", filter);
+            console.log("Collection Name:", collectionName);
+            db.collection(collectionName).findOne(filter, function (err, data) {
+                // Log any errors if the server encounters one
+                if (err) {
+                    console.log(err);
+                    callback(err);
+                }
+                else {
+                    //console.log(data);
+                    callback(data);
+                }
+            });
+        });
+    }
 };
 
 module.exports = DataLayer;

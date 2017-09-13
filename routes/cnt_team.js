@@ -20,6 +20,7 @@ router.post("/addnew", function (req, res) {
     var newTeam = {
         teamName: req.body.teamName,
         teamLeadUserName: req.body.teamLeadUserName,
+        teamMembers: [],
         lastUser: req.body.userName
     }
     team.addNew(newTeam, function (data) {
@@ -41,6 +42,16 @@ router.post("/update", function (req, res) {
 router.post("/delete", function (req, res) {
 
     team.delete(req.body.key, function (data) {
+        res.json(data);
+    });
+});
+
+router.post("/adduser", function (req, res) {
+    console.log("===== /adduser parms =====");
+    console.log("TeamID:", req.body.key);
+    console.log("UserID:", req.body.userKey);
+
+    team.addUser(req.body.key, req.body.userKey, function (data) {
         res.json(data);
     });
 });

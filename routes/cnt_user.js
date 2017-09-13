@@ -15,13 +15,19 @@ router.get("/findall", function (req, res) {
     });
 
 });
-
+router.post("/findone", function (req, res) {
+// find everything
+    user.findOne(req.body.user_email, function (data) {
+        res.json(data);
+    });
+});
 router.post("/addnew", function (req, res) {
     var newUser = {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         mi: req.body.mi,
-        team_id: [req.body.team_id],
+        user_email: req.body.user_email,
+        team_membership: [req.body.team_id],
         tags: [],
         address: req.body.address,
         city: req.body.city,
@@ -29,6 +35,14 @@ router.post("/addnew", function (req, res) {
         zip: req.body.zip,
         cell_phone: req.body.cell_phone,
         home_phone: req.body.home_phone,
+        current_manager_id: req.body.current_manager_id,
+        roles: {
+            admin: false,
+            user: true,
+            super_user: false,
+            people_manager: false
+        },
+        reviews: []
     }
     user.addNew(newUser, function (data) {
         res.json(data);
@@ -41,14 +55,17 @@ router.post("/update", function (req, res) {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         mi: req.body.mi,
-        team_id: [],
+        user_email: req.body.user_email,
+        team_membership: [],
         tags: [],
+        roles: req.body.roles,
         address: req.body.address,
         city: req.body.city,
         state: req.body.state,
         zip: req.body.zip,
         cell_phone: req.body.cell_phone,
-        home_phone: req.body.home_phone
+        home_phone: req.body.home_phone,
+        current_manager_id: req.body.current_manager_id
     }
     user.update(req.body.key, newUser, function (data) {
         res.json(data);
