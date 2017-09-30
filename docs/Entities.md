@@ -7,4 +7,4 @@ Reviews |
 Objectives |
 Tasks |
 
-[Return to StratPlanner Home](../docs/README.md)
+[Return to StratPlanner Home](../README.md)
