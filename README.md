@@ -21,6 +21,9 @@ This solution is built utilizing the following technologies.
 * Express
 * MongoDB
 
+Click [here](./docs/FrontEnd.md) to to see an overview of data model and various components associated
+with the server side.
+
 ### Client Side
 * MomentJS
 * Firebase (For user Authentication)
@@ -28,7 +31,10 @@ This solution is built utilizing the following technologies.
 * jQuery
 * MDBFree
 * FontAwesome
+* Google Analytics
 
+Click [here](./docs/Entities.md) to to see an overview of data model and various components associated
+with the server side.
 
 ## High-level Work Breakdown Structure
 
@@ -42,4 +48,8 @@ Item | Phase | Task | Status
 6| Build | Connect front end components to data model| Not Started
 7| Build | Implement basic business logic and form validation| Not Started
 8| Stabilize | Exercise Heroku deployment functionality | Not Started
-8| Stabilize | Demonstrate MVP | Not Started
+9| Stabilize | Demonstrate MVP | Not Started
+
+
+
+
