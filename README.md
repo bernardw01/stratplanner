@@ -21,7 +21,7 @@ This solution is built utilizing the following technologies.
 * Express
 * MongoDB
 
-Click [here](./docs/FrontEnd.md) to to see an overview of data model and various components associated
+Click [here](./docs/Entities.md) to to see an overview of data model and various components associated
 with the server side.
 
 ### Client Side
@@ -33,8 +33,8 @@ with the server side.
 * FontAwesome
 * Google Analytics
 
-Click [here](./docs/Entities.md) to to see an overview of data model and various components associated
-with the server side.
+Click [here](./docs/FrontEnd.md) to to see an overview of data model and various components associated
+with the Client side.
 
 ## High-level Work Breakdown Structure
 
