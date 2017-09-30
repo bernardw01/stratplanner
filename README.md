@@ -12,6 +12,7 @@ and struggle to operationalize the stated strategies of their leaders.
 StratPlanner seeks to bridge the gap between Abstract Strategies and Actionable
 tasks.  Teams that utilize this solution can ensure that this
 
+
 First Header | Second Header
 ------------ | -------------
 Content cell 1 | Content cell 2
