@@ -155,8 +155,7 @@ function hideMenuItems() {
 };
 
 function loadUsers() {
-    console.log("Searching for this email:", email);
-    let queryURL = "/api/user/findall";
+/*    let queryURL = "/api/user/findall";
     let options = {
     };
     return $.ajax({
@@ -165,6 +164,20 @@ function loadUsers() {
         data: options
     }).done(function (response) {
         console.log(response);
-    });
+    });*/
+    $('#userTable').DataTable( {
+        "ajax": "/api/user/findall",
+        "columns": [
+            { "data": "first_name" },
+            { "data": "last_name" },
+            { "data": "job_title" },
+            { "data": "job_role" },
+            { "data": "user_email" },
+            { "data": "cell_phone" }
+        ]
+    } );
+
 };
+
+
 

@@ -27,6 +27,8 @@ router.post("/addnew", function (req, res) {
         last_name: req.body.last_name,
         mi: req.body.mi,
         user_email: req.body.user_email,
+        job_title: req.body.job_title,
+        job_role: req.body.job_role,
         team_membership: [req.body.team_id],
         tags: [],
         address: req.body.address,
@@ -37,10 +39,10 @@ router.post("/addnew", function (req, res) {
         home_phone: req.body.home_phone,
         current_manager_id: req.body.current_manager_id,
         roles: {
-            admin: false,
-            user: true,
-            super_user: false,
-            people_manager: false
+            admin: req.body.role_admin,
+            user: req.body.role_user,
+            super_user: req.body.role_super_user,
+            manager: req.body.role_manager,
         },
         reviews: []
     }
@@ -56,16 +58,23 @@ router.post("/update", function (req, res) {
         last_name: req.body.last_name,
         mi: req.body.mi,
         user_email: req.body.user_email,
+        job_title: req.body.job_title,
+        job_role: req.body.job_role,
         team_membership: [],
         tags: [],
-        roles: req.body.roles,
         address: req.body.address,
         city: req.body.city,
         state: req.body.state,
         zip: req.body.zip,
         cell_phone: req.body.cell_phone,
         home_phone: req.body.home_phone,
-        current_manager_id: req.body.current_manager_id
+        current_manager_id: req.body.current_manager_id,
+        roles: {
+            admin: req.body.role_admin,
+            user: req.body.role_user,
+            super_user: req.body.role_super_user,
+            manager: req.body.role_manager,
+        },
     }
     user.update(req.body.key, newUser, function (data) {
         res.json(data);
