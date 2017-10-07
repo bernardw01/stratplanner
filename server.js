@@ -2,11 +2,16 @@
 //Responding to new test
 var express = require("express");
 var bodyParser = require("body-parser");
+var logger = require("morgan");
 var methodOverride = require("method-override");
 var exphbs = require("express-handlebars");
 var path = require("path");
 var app = express();
 var port = normalizePort(process.env.PORT || '3020');
+var dbLayer = require("./config/dbLayer");
+
+var DB = new dbLayer();
+DB.start();
 
 "use strict";
 app.set('port', port);
@@ -14,6 +19,7 @@ app.set('port', port);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
+app.use(logger("dev"));
 
 //the css and image
 app.use(express.static(path.join(__dirname, "/public")));

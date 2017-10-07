@@ -8,7 +8,7 @@ module.exports = {
             return MONGODB_URI;
         } else {
             console.log("Server running on the localhost");
-            return "mongodb://localhost/stratplanner";
+            return "mongodb://localhost/stratplanner2";
         }
     }
 };

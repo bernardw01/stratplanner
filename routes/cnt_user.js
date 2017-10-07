@@ -1,23 +1,33 @@
 var express = require('express');
 
 // Requiring our models
+var mdl_user = require("../models/mdl_user")
 var db = require("../models/user");
 var router = express.Router();
 
 "use strict";
 var user = new db();
 
+
 // Create all our routes and set up logic within those routes where required.
 router.get("/findall", function (req, res) {
-// find everything
+    // find everything
     user.findAll(function (data) {
         res.json(data);
     });
 
 });
 router.post("/findone", function (req, res) {
-// find everything
+    // find everything
     user.findOne(req.body.user_email, function (data) {
+        res.json(data);
+    });
+});
+
+router.post("/finduser", function (req, res) {
+    // find everything
+    var User = new mdl_user();
+    User.find({"user_email": req.body.user_email}, function (data) {
         res.json(data);
     });
 });
@@ -49,6 +59,22 @@ router.post("/addnew", function (req, res) {
     user.addNew(newUser, function (data) {
         res.json(data);
     });
+});
+
+router.post("/adduser", function (req, res) {
+    var User = new mdl_user(req.body);
+
+    User.save(function(error, doc) {
+        // Send any errors to the browser
+        if (error) {
+            res.send(error);
+        }
+        // Otherwise, send the new doc to the browser
+        else {
+            res.send(doc);
+        }
+    });
+
 });
 
 router.post("/update", function (req, res) {

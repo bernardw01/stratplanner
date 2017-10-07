@@ -19,15 +19,17 @@ This solution is built utilizing the following technologies.
 ### Server Side
 * Node JS
 * Express
-* MongoDB
+* MySQL
+* Self Developed ORM
 
 Click [here](./docs/Entities.md) to to see an overview of data model and various components associated
 with the server side.
 
 ### Client Side
 * MomentJS
-* Firebase (For user Authentication)
+* Passport JS
 * Bootstrap 3
+* Vue JS
 * jQuery
 * MDBFree
 * FontAwesome
